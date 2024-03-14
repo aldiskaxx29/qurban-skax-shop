@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <div>HALLO QURBAN</div>
+      <div>HALLO QURBAN ALDI</div>
     </>
   )
 }
