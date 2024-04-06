@@ -1,9 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {qurbanData} from "../../data/qurban";
+import { getAllQurban, getOneQurban } from "../asyncAction/qurban";
 
 const initialState = {
   current: '',
-  list: qurbanData,
+  errormsg: '',
+  successmsg: '',
+  list: [],
   loading: false,
 }
 
@@ -11,23 +14,22 @@ const qurbanSlice = createSlice({
   name: "qurban",
   initialState,
   reducers: {
-    addQurban: (state, action) => {
-      state.list.push(action.payload);
-    },
-
-    deleteQurban: (state, action) => {
-      state.list = state.list.filter((item) => item.id !== action.payload.id);
-    },
-
-    updateQurban: (state, action) => {
-      state.list.map(item => {
-        if(item.id == action.payload.id){
-          item.username = action.payload.username;
-        }
-      })
+    resetMsg: (state) => {
+      state.errormsg = '';
+      state.successmsg = ''
     }
+  },
+  extraReducers: (build) => {
+    build.addCase(getAllQurban.pending, (state) => {
+      state.loading = true;
+      state.list = [];
+    }),
+    build.addCase(getAllQurban.fulfilled, (state, action) => {
+      state.loading = false;
+      state.list = action.payload;
+    })
   }
 })
 
-export const {addQurban, deleteQurban, updateQurban} = qurbanSlice.actions;
+export const {resetMsg} = qurbanSlice.actions;
 export default qurbanSlice.reducer;

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Navbar from './componenets/Navbar';
 import Banner from './componenets/Banner';
@@ -6,12 +6,17 @@ import Category from './componenets/Category';
 import Card from './componenets/Card';
 import Jumbotron from './componenets/Jumbotron';
 import Footer from './componenets/Footer';
+import { getAllQurban } from './redux/asyncAction/qurban';
 
 function App() {
   const dispatch = useDispatch();
   const qurbanList = useSelector((state) => state.qurban.list);
 
-  console.log(qurbanList);
+  console.log('dapet',qurbanList);
+
+  useEffect(() => {
+    dispatch(getAllQurban());
+  }, []);
 
   const menus1 = [
     {
