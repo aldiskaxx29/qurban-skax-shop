@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import qurbanSlice from "./reducer/qurbanSlice";
 import logger from "redux-logger";
 import { thunk } from "redux-thunk";
+import { persistStore } from "redux-persist";
+import reducer from './reducer/index';
 
-const store = configureStore({
-  reducer: {
-    qurban: qurbanSlice,
-    middleware: [thunk,logger]
-  }
+export const store = configureStore({
+  reducer,
+  // middleware: [thunk, logger]
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk, logger),
 })
 
-export default store;
+export const persistor = persistStore(store);
+// export default store;
