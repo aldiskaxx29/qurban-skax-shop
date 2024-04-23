@@ -44,7 +44,7 @@ const Banner = () => {
 
   return (
     <div className='grid grid-cols-3 gap-2'>
-      <div className='col-span-2'>
+      <div className='col-span-3 md:col-span-2'>
         <div className='slider-container'>
           <Slider {...settings}>
             <div className='w-full h-[500px] rounded-md bg-slate-300'>1</div>
@@ -54,7 +54,7 @@ const Banner = () => {
           </Slider>
         </div>
       </div>    
-      <div className='col-1'>
+      <div className='col-span-1 hidden md:block'>
         <div className='w-full h-[500px] rounded-md bg-slate-300'></div>
       </div>    
     </div>

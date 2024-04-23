@@ -6,9 +6,7 @@ import reducer from './reducer/index';
 
 export const store = configureStore({
   reducer,
-  // middleware: [thunk, logger]
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk, logger),
 })
 
 export const persistor = persistStore(store);
-// export default store;

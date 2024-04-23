@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className=''>
-      <div className='grid grid-cols-4 gap-3'>
+      <div className='grid grid-cols-1 md:grid-cols-4 gap-3'>
         <div className='col-span-1'>
           <div className='p-4 rounded-md h-[200px] bg-slate-300'>
             <p>LOGO</p>

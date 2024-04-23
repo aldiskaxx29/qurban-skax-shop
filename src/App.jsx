@@ -64,7 +64,7 @@ function App() {
   ]
 
   return (
-    <div className='max-w-7xl mx-auto space-y-3'>
+    <div className='max-w-7xl mx-auto space-y-3 px-2 relative'>
       <Navbar/>
       <Banner/>
       <Category/>
@@ -73,6 +73,9 @@ function App() {
       <Card title="Deals Of The Day" menu={menus3} />
       <Jumbotron/>
       <Footer/>
+      {/* <div className='h-[300px] bg-red-300  '>
+
+      </div> */}
     </div>
   )
 }
