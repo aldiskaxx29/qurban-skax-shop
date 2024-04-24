@@ -1,8 +1,8 @@
 import React from 'react'
 import Slider from "react-slick";
 
-const Card = ({left = false, title, menu}) => {
-  console.log(left,title, menu);
+const Card = ({left = false, title, menu, data = []}) => {
+  console.log('card',left,title, menu, data);
   const settings = {
     dots: true,
     infinite: true,
@@ -24,8 +24,8 @@ const Card = ({left = false, title, menu}) => {
   return (
     <div>
       <div className='flex flex-row justify-between'>
-        <p className='md:text-2xl font-bold text-sm'>{title}</p>
-        <ul className='flex space-x-3  items-center justify-end w-full'>
+        <p className='md:text-2xl font-bold text-sm '>{title}</p>
+        <ul className='flex space-x-3  items-center justify-end'>
           {menu.map((item, index) => (
             <li key={index} className='text-[9px]'>{item.name}</li>
           ))}
@@ -36,15 +36,24 @@ const Card = ({left = false, title, menu}) => {
             <div className=''>
               <div className='grid grid-cols-6 gap-2'>
                 <div className='col-span-2'>
-                  <div className='h-[300px] bg-slate-300 rounded-md'></div>
+                  <div className='h-[300px] bg-slate-300 rounded-md'>
+                    <img src="https://res.cloudinary.com/ddaztooxq/image/upload/v1713934746/Desain_tanpa_judul_9_muoiiw.png" className='w-full h-full object-cover' alt="" />
+                  </div>
                 </div>
                 <div className='col-span-4'>
                   {/* <div className="slider-container" > */}
                     <Slider {...settings2} >
-                      <div className='col-span-1 px-2' style={{ padding: '0 10px' }}>
-                        <div className='h-[300px] w-full  bg-slate-300 rounded-md'></div>
-                      </div>
-                      <div className='col-span-1 px-2' style={{ padding: '0 10px' }}>
+                      {data.map((item) => (
+                        <div className='col-span-1 px-2 relative' style={{ padding: '0 10px' }}>
+                          <div className='h-[300px] w-full  bg-slate-300 rounded-md cursor-pointer'>
+                            <img src={item.img} className='w-full h-full object-cover rounded-md' alt="" />
+                          </div>
+                          <div className='absolute bottom-0 p-5'>
+                            <span className='font-bold text-white'>{item.title}</span>
+                          </div>
+                        </div>
+                        ))}
+                      {/* <div className='col-span-1 px-2' style={{ padding: '0 10px' }}>
                         <div className='h-[300px]  bg-slate-300 rounded-md'></div>
                       </div>
                       <div className='col-span-1 px-2' style={{ padding: '0 10px' }}>
@@ -55,7 +64,7 @@ const Card = ({left = false, title, menu}) => {
                       </div>
                       <div className='col-span-1 px-2' style={{ padding: '0 10px' }}>
                         <div className='h-[300px]  bg-slate-300 rounded-md'></div>
-                      </div>
+                      </div> */}
                     </Slider>
                   {/* </div> */}
                 </div>
@@ -63,7 +72,17 @@ const Card = ({left = false, title, menu}) => {
             </div>
           : 
             <div className='grid grid-cols-1 md:grid-cols-5 gap-2'>
+              {data.map((item) => (
               <div className='col-span-1'>
+                <div className='h-[300px] rounded-md relative '>
+                  <img className='w-full h-full object-cover rounded-md cursor-pointer' src={item.img} alt="" />
+                  <div className='absolute bottom-0 p-5'>
+                    <span className='font-bold text-white'>{item.title}</span>
+                  </div>
+                </div>
+              </div>
+              ))}
+              {/* <div className='col-span-1'>
                 <div className='h-[300px] bg-slate-300 rounded-md'></div>
               </div>
               <div className='col-span-1'>
@@ -74,10 +93,7 @@ const Card = ({left = false, title, menu}) => {
               </div>
               <div className='col-span-1'>
                 <div className='h-[300px] bg-slate-300 rounded-md'></div>
-              </div>
-              <div className='col-span-1'>
-                <div className='h-[300px] bg-slate-300 rounded-md'></div>
-              </div>
+              </div> */}
             </div>
           }
     </div>
