@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { GiSheep } from "react-icons/gi";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
@@ -29,7 +30,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className='items-center justify-center flex'>
-        <span className=' text-white text-sm hidden md:block'>+62 877-0153-6399</span>
+        <a href='https://api.whatsapp.com/send/?phone=6287701536399&text=%5BReq.Q24042413402106%5D+-+Halo%2C+Saya+tertarik+dengan+kambing/domba+ini&type=phone_number&app_absent=0' className='cursor-pointer text-sm text-white' target='_blank'>
+          <FaWhatsapp size={30}/>
+        </a>
       </div>
     </div>
 
@@ -40,7 +43,7 @@ const Navbar = () => {
           <li className='cursor-pointer hover:border-b hover:slate-100'>Shop</li>
           <li className='cursor-pointer hover:border-b hover:slate-100'>Blog</li>
           <li className='cursor-pointer hover:border-b hover:slate-100'>Contact</li>
-          <span className='text-sm'>+62 877-0153-6399</span>
+          <a href='https://api.whatsapp.com/send/?phone=6287701536399&text=%5BReq.Q24042413402106%5D+-+Halo%2C+Saya+tertarik+dengan+kambing/domba+ini&type=phone_number&app_absent=0' className='cursor-pointer text-sm'>+62 877-0153-6399</a>
         </ul>
       </div>
     </div>

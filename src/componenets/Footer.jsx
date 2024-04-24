@@ -1,4 +1,5 @@
 import React from 'react'
+import { GiSheep } from 'react-icons/gi'
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
       <div className='grid grid-cols-1 md:grid-cols-4 gap-3'>
         <div className='col-span-1'>
           <div className='p-4 rounded-md h-[200px] bg-slate-300'>
-            <p>LOGO</p>
+            <GiSheep size={30} className='text-white'/> 
             <ul>
               <li></li>
             </ul>
@@ -46,7 +47,7 @@ const Footer = () => {
         </div>
         <div className='col-span-1 hidden md:block'>
           <div className='p-4 rounded-md  text-center'>
-            <p>+62 877-0153-6399</p>
+            <a href='https://api.whatsapp.com/send/?phone=6287701536399&text=%5BReq.Q24042413402106%5D+-+Halo%2C+Saya+tertarik+dengan+kambing/domba+ini&type=phone_number&app_absent=0' target='_blank'>+62 877-0153-6399</a>
           </div>
         </div>
         <div className='col-span-1 hidden md:block'>

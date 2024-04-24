@@ -27,7 +27,7 @@ const Card = ({left = false, title, menu, data = []}) => {
         <p className='md:text-2xl font-bold text-sm '>{title}</p>
         <ul className='flex space-x-3  items-center justify-end'>
           {menu.map((item, index) => (
-            <li key={index} className='text-[9px]'>{item.name}</li>
+            <li key={index} className='text-[9px] md:text-md'>{item.name}</li>
           ))}
         </ul>
       </div>
@@ -53,18 +53,6 @@ const Card = ({left = false, title, menu, data = []}) => {
                           </div>
                         </div>
                         ))}
-                      {/* <div className='col-span-1 px-2' style={{ padding: '0 10px' }}>
-                        <div className='h-[300px]  bg-slate-300 rounded-md'></div>
-                      </div>
-                      <div className='col-span-1 px-2' style={{ padding: '0 10px' }}>
-                        <div className='h-[300px]  bg-slate-300 rounded-md'></div>
-                      </div>
-                      <div className='col-span-1 px-2' style={{ padding: '0 10px' }}>
-                        <div className='h-[300px]  bg-slate-300 rounded-md'></div>
-                      </div>
-                      <div className='col-span-1 px-2' style={{ padding: '0 10px' }}>
-                        <div className='h-[300px]  bg-slate-300 rounded-md'></div>
-                      </div> */}
                     </Slider>
                   {/* </div> */}
                 </div>
@@ -82,18 +70,6 @@ const Card = ({left = false, title, menu, data = []}) => {
                 </div>
               </div>
               ))}
-              {/* <div className='col-span-1'>
-                <div className='h-[300px] bg-slate-300 rounded-md'></div>
-              </div>
-              <div className='col-span-1'>
-                <div className='h-[300px] bg-slate-300 rounded-md'></div>
-              </div>
-              <div className='col-span-1'>
-                <div className='h-[300px] bg-slate-300 rounded-md'></div>
-              </div>
-              <div className='col-span-1'>
-                <div className='h-[300px] bg-slate-300 rounded-md'></div>
-              </div> */}
             </div>
           }
     </div>
